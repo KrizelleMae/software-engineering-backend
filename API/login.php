@@ -19,7 +19,7 @@ if (mysqli_num_rows($result) > 0) {
             // IF TAMA PASSWORD  
 
             if($user['ROLE'] === 3) {
-
+                
                 $getUser = $db->prepare("SELECT * from companyprofile where FK_USER_ID = ?;");
                 $getUser->bind_param("s", $user['USER_ID']);
                 $getUser->execute();
