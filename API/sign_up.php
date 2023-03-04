@@ -6,10 +6,6 @@ $user = json_decode(file_get_contents('php://input'));
 $email = $user->email;
 $password = $user->password;
 
-$stmt = $db->prepare("SELECT * FROM user WHERE USER_EMAIL = ?;");
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
 
 if (mysqli_num_rows($result) > 0) {
     // $data = ['status' => 1, 'message' => "Record successfully created"];
@@ -17,7 +13,6 @@ if (mysqli_num_rows($result) > 0) {
 
         if(password_verify($password, $user['PASSWORD'])) {
             // IF TAMA PASSWORD  
-            
             
             if ($user['ACCESS'] === 1) {
                 // ADMIN
