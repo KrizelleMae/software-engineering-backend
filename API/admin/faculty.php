@@ -57,7 +57,7 @@ if ($method == "POST") {
        DATE_EDITED = ?, LAST_EDIT = ?) VALUES (?, ?, ?, ?, ?, ?);");
     $stmt->bind_param('ssssssss', $faculty_name, $rank, $designation, $image, $qualifications, 
      $date_joined, $date, $user_id);
-
+    
 } else if ($method == "DELETE") {
     // UPDATE DATA
 
